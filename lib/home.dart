@@ -310,7 +310,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SongListPage(), // Tạo trang tạo playlist
+                          builder: (context) => PlaylistPage(),
                         ),
                       );
                     },

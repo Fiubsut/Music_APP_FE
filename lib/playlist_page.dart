@@ -291,16 +291,18 @@ class _PlaylistPageState extends State<PlaylistPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text(
-          'Your Playlists',
-          style: TextStyle(
-            color: Colors.white, 
-            fontFamily: "Bungee",
-            fontSize: 24, 
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            ),
-            
+        title: Center(
+          child: const Text(
+            'Your Playlists',
+            style: TextStyle(
+              color: Colors.white, 
+              fontFamily: "Bungee",
+              fontSize: 24, 
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              ),
+              
+          ),
         ),
         backgroundColor: Colors.black,
         iconTheme: const IconThemeData(color: Colors.greenAccent),
