@@ -9,7 +9,7 @@ import 'package:lottie/lottie.dart';
 import 'dart:convert';
 import 'package:marquee/marquee.dart';
 import 'package:path_provider/path_provider.dart';
-// import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -377,29 +377,29 @@ class _MusicPlayPageState extends State<MusicPlayPage> {
   }
 
   Future<void> _shareTrack() async {
-    // if (trackURL.isEmpty) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(
-    //       content: Text("No track URL available to share."),
-    //       backgroundColor: Colors.red,
-    //     ),
-    //   );
-    //   return;
-    // }
+    if (trackURL.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("No track URL available to share."),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
 
-    // try {
-    //   await Share.share(
-    //     "🎵 Check out this song: $trackName by $artistName. Listen now: $trackURL",
-    //     subject: "Share Song: $trackName",
-    //   );
-    // } catch (e) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(
-    //       content: Text("Error sharing track: $e"),
-    //       backgroundColor: Colors.red,
-    //     ),
-    //   );
-    // }
+    try {
+      await Share.share(
+        "🎵 Check out this song: $trackName by $artistName. Listen now: $trackURL",
+        subject: "Share Song: $trackName",
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Error sharing track: $e"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   void showPlaylistModal() {
